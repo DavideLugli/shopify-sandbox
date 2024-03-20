@@ -1,0 +1,42 @@
+[
+    {
+        "name": "theme_info",
+        "theme_name": "Sandbox",
+        "theme_author": "Luda",
+        "theme_version": "0.1.0",
+        "theme_documentation_url": "https://luda.com/docs",
+        "theme_support_url": "https://luda.com/support"
+    },
+    {
+        "name": "Colors",
+        "settings":[
+            {
+                "type": "theme_info",
+                "id": "body_text",
+                "label": "Body text",
+                "default": "#000000"
+            }
+        ]
+    },
+    {
+        "name": "Typography",
+        "settings":[
+            {
+                "type": "font_picker",
+                "id": "heading_font",
+                "label": "Heading font",
+                "default": "helvetica_n4"
+            },
+            {
+                "type": "range",
+                "id": "font_size",
+                "min": 12,
+                "max": 24,
+                "step": 1,
+                "unit": "px",
+                "label": "Font size",
+                "default": 16
+              }
+        ]
+    }
+]

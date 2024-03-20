@@ -1,0 +1,13 @@
+{
+    "current": "Default",
+    "presets": {
+        "Default": {
+            "body_text": "#00ffff",
+            "heading_font": "gill_sans_nova_n4"
+        },
+        "Preset Green":{
+            "body_text": "#ff00ff",
+            "heading_font": "serif"
+        }
+    }
+}
