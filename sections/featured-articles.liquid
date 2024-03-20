@@ -1,0 +1,21 @@
+<section>
+    <p>The Journal</p>
+    <h2>Our Process</h2>
+    <ul>
+        <li>{ % render "article-card", article_title:"Only the Brave" %}</li>
+    </ul>
+</section>
+
+{% schema %}
+{
+    "name": "Featured articles",
+    "settings":[
+        {
+            "type": "theme_info",
+            "id": "body_text",
+            "label": "Body text",
+            "default": "#000000"
+        }
+    ]
+}
+{% endschema %}
