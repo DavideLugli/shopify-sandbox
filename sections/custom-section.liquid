@@ -1,0 +1,30 @@
+{% schema %}
+{
+    "name": "Custom Section",
+    "tag": "section",
+    "class": "wrapper",
+    "limit": 2,
+    "settings": [
+        {
+            "type": "text",
+            "id": "message",
+            "label": "Message",
+            "default": "Hello!"
+        }
+    ],
+    "blocks": [
+        {
+            "type": "heading",
+            "name": "Heading",
+            "settings": [
+                {
+                    "type": "text",
+                    "id": "heading",
+                    "label": "Heading",
+                    "default": "My Default Heading"
+                }
+            ]
+        }
+    ]
+}
+{% endschema %}
