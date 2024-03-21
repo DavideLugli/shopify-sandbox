@@ -9,8 +9,18 @@
 <body>
 {{ content_for_layout }}
 <h1>Welcome to the Store</h1>
+<div class="articles--wrapper">
 {% render "article-card", article_title:"Best themes on shopify", article_body:"article text is funny ok some sentences here to create the bolg post nice very well done"%}
-{% render "article-card", article_title:"Best themes on shopify" %}
-{% render "article-card", article_title:"Best themes on shopify", article_body:"text for the 3rd blog post" %}
+{% render "article-card", article_title:"Articolo 2" %}
+{% render "article-card", article_title:"Articolo Terzo", article_body:"uno per i soldi due per lo show" %}
+</div>
 </body>
 <html>
+
+{% style %}
+.articles--wrapper {
+    display: flex;
+    justify-content: space-around;
+    gap: 12px;
+}
+{% endstyle %}

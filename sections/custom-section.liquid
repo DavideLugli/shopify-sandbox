@@ -1,3 +1,22 @@
+<h1 style="color:{{ section.settings.heading_color}}; font-family:{{ section.settings.heading_ff }}; font-size:{{ section.settings.font_size }}">{{ section.settings.message }}</h1>
+
+{% for block in section.blocks %}
+    {% if block.type == "social" %}
+        <a style="color:{{section.settings.social_color}}" href={{ block.settings.url}}>{{block.settings.text}}</a>
+    {% elsif block.type == "paragraph" %}
+    <p style="color:{{ section.settings.color}}">{{block.settings.text}}</p>
+    {% endif %}
+{% endfor %}
+
+{% stylesheet %}
+    .wrapper{
+        padding: 0;
+        margin: 0;
+        background-color: #F5F5F5;
+    }
+
+{% endstylesheet %}
+
 {% schema %}
 {
     "name": "Custom Section",
@@ -8,23 +27,75 @@
         {
             "type": "text",
             "id": "message",
-            "label": "Message",
-            "default": "Hello!"
+            "label": "Heading Text",
+            "default": "Hello World!"
+        },
+        {
+            "type": "color",
+            "id": "heading_color",
+            "label": "Heading Color",
+            "default": "#000000"
+        },
+        {
+            "type": "font_picker",
+            "id": "heading_ff",
+            "label": "Heading Font Family",
+            "default": "helvetica_n4"
+        },
+        {
+            "type": "range",
+            "id": "font_size",
+            "min": 12,
+            "max": 24,
+            "step": 1,
+            "unit": "px",
+            "label": "Heading Font size",
+            "default": 18
+        },
+        {
+            "type": "color",
+            "id": "social_color",
+            "label": "Social Links Color",
+            "default": "#6495ED"
+        },
+        {
+            "type": "color",
+            "id": "color",
+            "label": "Paragraph Color",
+            "default": "#87CEEB"
         }
     ],
-    "blocks": [
+    "blocks":[
         {
-            "type": "heading",
-            "name": "Heading",
-            "settings": [
+            "name": "Social Links",
+            "type": "social",
+            "settings":[
                 {
                     "type": "text",
-                    "id": "heading",
-                    "label": "Heading",
-                    "default": "My Default Heading"
+                    "id": "text",
+                    "label": "Social Name"
+                },
+                {
+                    "type": "text",
+                    "id": "url",
+                    "label": "Social URL"
                 }
             ]
+
+        },
+        {
+            "name": "Paragraph",
+            "type": "paragraph",
+            "settings":[
+                {
+                    "type": "textarea",
+                    "id": "text",
+                    "label": "Your Paragraph"
+                }
+            ]
+
         }
-    ]
+    ],
+    "presets": [{"name": "Default custom section"}]
 }
 {% endschema %}
